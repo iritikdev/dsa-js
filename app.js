@@ -5,7 +5,6 @@ const list = new SinglyLinkedList();
 list.push(10);
 list.push(20);
 list.push(30);
-
-console.log(list.pop());
+console.log(list.toString());
 
 console.log("Done");

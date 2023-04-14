@@ -43,6 +43,28 @@ class Singly {
     this.last = current;
     return item;
   }
+
+  toString() {
+    let result = "[ ";
+    let current = this.first;
+    while (current !== null) {
+      result += `${current.item}, `;
+      current = current.next;
+    }
+    result += "]";
+    return result;
+  }
+
+  shift() {
+    if (this.first === null) return undefined;
+    const item = this.first.item;
+
+    const second = this.first.next;
+    this.first.next = null;
+    this.first = second;
+
+    return item;
+  }
 }
 
 export default Singly;
