@@ -21,6 +21,16 @@ class Singly {
 
     this.length++;
   }
+
+  unshift(item) {
+    const node = new Node(item);
+    if (this.first === null) this.first = this.last = node;
+    else {
+      node.next = this.first;
+      this.first = node;
+    }
+    this.length++;
+  }
 }
 
 export default Singly;
