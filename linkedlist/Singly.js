@@ -31,6 +31,18 @@ class Singly {
     }
     this.length++;
   }
+
+  pop() {
+    let item = this.last.item;
+    if (this.first === null) return undefined;
+    let current = this.first;
+    while (current.next !== this.last) {
+      current = current.next;
+    }
+    current.next = null;
+    this.last = current;
+    return item;
+  }
 }
 
 export default Singly;

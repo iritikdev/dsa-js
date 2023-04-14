@@ -6,7 +6,6 @@ list.push(10);
 list.push(20);
 list.push(30);
 
-list.unshift(5);
-list.unshift(8);
+console.log(list.pop());
 
 console.log("Done");

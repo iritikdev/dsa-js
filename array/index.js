@@ -8,7 +8,7 @@ numbers.length = 10;
 
 numbers.push(50);
 
-numbers.length = 2;
+numbers.pop;
 
 console.log("lenght " + numbers.length);
 console.log(numbers);
