@@ -1,10 +1,7 @@
-import SinglyLinkedList from "./linkedlist/Singly.js";
+const insertionSort = (nums) => {
+  nums.forEach((element, index) => {
+    console.log(element, index);
+  });
+};
 
-const list = new SinglyLinkedList();
-
-list.push(10);
-list.push(20);
-list.push(30);
-console.log(list.toString());
-
-console.log("Done");
+insertionSort([7, 8, 9, 6, 4, 2]);
