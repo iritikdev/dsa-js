@@ -5,48 +5,47 @@ class Node {
   }
 }
 
-class Singly {
+class SinglyLinkedList {
   constructor() {
-    this.first = null;
-    this.last = null;
-    this.length = 0;
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
   }
-  push(item) {
+  addLast(item) {
     const node = new Node(item);
-    if (this.first === null) this.first = this.last = node;
-    else {
-      this.last.next = node;
-      this.last = node;
-    }
+    if (this.head === null) return (this.head = this.tail = node);
 
-    this.length++;
+    this.tail.next = node;
+    this.tail = node;
+
+    this.size++;
   }
 
-  unshift(item) {
+  addFirst(item) {
     const node = new Node(item);
-    if (this.first === null) this.first = this.last = node;
-    else {
-      node.next = this.first;
-      this.first = node;
-    }
-    this.length++;
+    if (this.head === null) return (this.head = this.tail = node);
+
+    node.next = this.head;
+    this.head = node;
+
+    this.size++;
   }
 
-  pop() {
-    let item = this.last.item;
-    if (this.first === null) return undefined;
-    let current = this.first;
-    while (current.next !== this.last) {
+  removeLast() {
+    let item = this.tail.item;
+    if (this.head === null) return undefined;
+    let current = this.head;
+    while (current.next !== this.tail) {
       current = current.next;
     }
     current.next = null;
-    this.last = current;
+    this.tail = current;
     return item;
   }
 
   toString() {
     let result = "[ ";
-    let current = this.first;
+    let current = this.head;
     while (current !== null) {
       result += `${current.item}, `;
       current = current.next;
@@ -55,16 +54,34 @@ class Singly {
     return result;
   }
 
-  shift() {
-    if (this.first === null) return undefined;
-    const item = this.first.item;
+  removeFirst() {
+    if (this.head === null) return undefined;
+    const item = this.head.item;
 
-    const second = this.first.next;
-    this.first.next = null;
-    this.first = second;
+    const second = this.head.next;
+    this.head.next = null;
+    this.head = second;
 
     return item;
   }
+  // Convert the list to an array
+  toArray() {
+    const arr = [];
+    let current = this.head;
+
+    while (current) {
+      arr.push(current.item);
+      current = current.next;
+    }
+
+    return arr;
+  }
+  getSize() {
+    return this.size;
+  }
+  isEmpty() {
+    return this.size === 0;
+  }
 }
 
-export default Singly;
+export default SinglyLinkedList;
