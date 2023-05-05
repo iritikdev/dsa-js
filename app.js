@@ -1,20 +1,18 @@
-import SinglyLinkedList from "./linkedlist/Singly.js";
-import DoublyLinkedList from "./linkedlist/Doubly.js";
-import Stack from "./Stack.js";
-const stack = new Stack();
+import Queue from "./Queue.js";
+const queue = new Queue();
 
-stack.push(1);
-stack.push(2);
-stack.push(3);
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
 
-console.log(stack.peek()); // Output: 3
+console.log(queue.peek()); // Output: 1
 
-stack.pop();
+queue.dequeue();
 
-console.log(stack.peek()); // Output: 2
+console.log(queue.peek()); // Output: 2
 
-console.log(stack.getSize()); // Output: 2
+console.log(queue.getSize()); // Output: 2
 
-stack.clear();
+queue.clear();
 
-console.log(stack.isEmpty()); // Output: true
+console.log(queue.isEmpty()); // Output: true
